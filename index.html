@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preload" href="undertaledeltarunetextfontextended.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/christmas-sparkle-personal-use" rel="stylesheet">
+      <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY!!</title>
+</head>
+<body>
+
+ <img id="tenna-fright" class="sprite" src="https://i.ibb.co/TB8p61tZ/spr-tenna-frightened-4.png">
+    <img id="tenna-laugh" class="sprite" src="https://i.postimg.cc/yNb9nsc2/ezgif-72f5557666bf96.gif">
+    <img id="tenna-woo" class="sprite" src="https://i.ibb.co/MkzqKV6m/spr-tenna-hooray-3.png">
+    <img id="tenna-pointup" class="sprite" src="https://i.ibb.co/qLLjmHx3/spr-tenna-point-up-0.png">
+    <img id="tenna-turn" class="sprite" src="https://i.ibb.co/C5nhYbtj/spr-tenna-communication-0.png">
+    <img id="tenna-kick" class="sprite" src="https://i.ibb.co/Y4LMLZrk/ezgif-1b5702004c7cb6.gif">
+    <img id="tenna-point" class="sprite" src="https://i.ibb.co/TD6rx7kZ/ITSTVTIME.webp">
+    <img id="tenna-dance" class="sprite" src="https://i.ibb.co/bj7v0BVB/PC-Computer-Deltarune-Tenna-Tenna-Dance.gif">
+    <img id="tenna-smile" class="sprite" src="https://i.ibb.co/bMBrg3zn/spr-tenna-pose-podium-0.png">
+    <img id="tenna-float" class="sprite" src="https://i.ibb.co/qLxkqmnr/spr-tenna-pose-0.png">
+    <img id="tenna-present" class="sprite" src="https://i.ibb.co/BH1dFDc0/spr-tenna-pose-podium-4.png">
+    <img id="tenna-" class="sprite" src="">
+    <img id="tenna-" class="sprite" src="">
+  
+
+<img src="https://i.ibb.co/ksp7C7Pw/c2432654eed2c17af90129f20e484903-removebg-preview.png" id="television">
+
+    <div id="bottom-container">
+        <div id="textthing">
+            <img src="https://i.ibb.co/RTQGkp5f/PC-Computer-Deltarune-User-Interface-HUD-w-trans.png" id="square">
+            <p id="text"></p>
+        </div>
+        <button id="next">
+            <img src="https://i.ibb.co/xqtSr8hF/hgfhgfhgfhgf.png" alt="Next">
+        </button>
+    </div>
+
+<script>
+    const dialog = [
+        { 
+            text: "Woah! That's one big TV!", 
+            spriteId: "tenna-fright",
+            highlightWords: [
+                { word: "TV", font: "highlight" } 
+            ]
+        },
+        { 
+            text: "Heh… I thought I was OLD, but this guy takes the cake!!", 
+            spriteId: "tenna-laugh",
+            highlightWords: [
+                { word: "OLD", font: "ancient" }
+            ]
+        },
+        { 
+            text: "Now, now… enough gawking at old TVs!", 
+            spriteId: "tenna-woo",
+    
+        },
+        { 
+            text: " Time to focus on the main broadcast! It's showtime!", 
+            spriteId: "tenna-pointup",
+            highlightWords: [
+                { word: "main", font: "highlight" }
+            ]
+        },
+        { 
+            text: "Lights, camera… YOU! The star of today’s broadcast!", 
+            spriteId: "tenna-point",
+            highlightWords: [
+                { word: "YOU", font: "highlight" }
+            ]
+        },
+         { 
+            text: "Uh-oh… was I not supposed to talk to you directly?", 
+            spriteId: "tenna-turn",
+    
+        },
+         { 
+            text: "Ah, well… rules are boring anyway!", 
+            spriteId: "tenna-laugh",
+        },
+         { 
+            text: "All eyes on the birthday boy!", 
+            spriteId: "tenna-point",
+            
+        },
+         { 
+            text: " An important broadcast just for you!", 
+            spriteId: "tenna-dance",
+            highlightWords: [
+                { word: "you", font: "highlight" }
+            ]
+        },
+         { 
+            text: "“It’s not every day someone as special as you gets all the spotlight… but today, birthday boy, it’s all yours!", 
+            spriteId: "tenna-smile",
+           
+        },
+         { 
+            text: "Ahhh… how wonderful it is to be young and full of life!", 
+            spriteId: "tenna-float",
+            highlightWords: [
+                { word: "wonderful", font: "highlight" }
+            ]
+        },
+         { 
+            text: "And now, live from the main channel… let’s give it up for the birthday boy!", 
+            spriteId: "tenna-point",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+         { 
+            text: "And now… the moment you’ve been waiting for!", 
+            spriteId: "tenna-woo",
+        },
+           { 
+            text: "Your birthday message, right here on this dusty , old TV!", 
+            spriteId: "tenna-present",
+            highlightWords: [
+                { word: "dusty", font: "ancient" },
+                { word: "old", font: "ancient" }
+            ]
+        },
+         { 
+            text: "Wait! Don’t get confused…i’m not the message,just the TV host!", 
+            spriteId: "tenna-",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+            { 
+            text: "", 
+            spriteId: "tenna-",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+            { 
+            text: "", 
+            spriteId: "tenna-",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+            { 
+            text: "", 
+            spriteId: "tenna-",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+            { 
+            text: "", 
+            spriteId: "tenna-",
+            highlightWords: [
+                { word: "", font: "" }
+            ]
+        },
+
+
+    ];
+
+    let currentLine = 0;
+    const textElement = document.getElementById('text');
+    const nextButton = document.getElementById('next');
+
+    function highlightWords(text, highlightWordsArray) {
+        if (!highlightWordsArray || highlightWordsArray.length === 0) return text;
+        
+        let result = text;
+        
+     
+        highlightWordsArray.forEach(({ word, font }) => {
+            const regex = new RegExp(`\\b${word}\\b`, 'gi');
+            result = result.replace(regex, `<span class="${font}">${word}</span>`);
+        });
+        
+        return result;
+    }
+
+    function nextDialog() {
+        
+        const currentSpriteId = dialog[currentLine].spriteId;
+        document.getElementById(currentSpriteId).classList.remove('active');
+        
+        currentLine++;
+        
+        if (currentLine < dialog.length) {
+           
+            const currentDialog = dialog[currentLine];
+            
+ 
+            const highlightedText = highlightWords(currentDialog.text, currentDialog.highlightWords);
+            textElement.innerHTML = highlightedText;
+            
+ 
+            const newSpriteId = currentDialog.spriteId;
+            document.getElementById(newSpriteId).classList.add('active');
+        } else {
+            textElement.innerHTML = "Thanks for listening!";
+            nextButton.style.display = 'none';
+        }
+    }
+
+
+    const firstDialog = dialog[0];
+    const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
+    textElement.innerHTML = initialText;
+    document.getElementById(firstDialog.spriteId).classList.add('active');
+    
+    nextButton.addEventListener('click', nextDialog);
+</script>
+
+</body>
+</html>
