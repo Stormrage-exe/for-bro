@@ -146,8 +146,27 @@
     position: fixed;
     bottom: 200px;
     left: 100px;
- 
+
 }
+
+#tenna-present{
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 200px;
+    left: 100px;
+
+}
+
+#tenna-sad{
+    width: 420px;
+    height: 470px;
+    position: fixed;
+    bottom: 200px;
+    left: 100px;
+
+}
+
 
 .active {
     display: block;
