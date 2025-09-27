@@ -208,10 +208,8 @@
             setTimeout(() => {
                 staticOverlay.style.display = 'none';
                 
-                // START SOUNDS AFTER STATIC DISAPPEARS (4 seconds)
                 playInitialSounds();
                 
-                // Initialize dialog after static finishes
                 const firstDialog = dialog[0];
                 const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
                 textElement.innerHTML = initialText;
@@ -274,7 +272,6 @@
     }
 
     window.addEventListener('load', function() {
-        // Only start the static - sounds will start AFTER static disappears
         startTVStatic();
     });
 
