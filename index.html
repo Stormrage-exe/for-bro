@@ -207,6 +207,15 @@
             staticOverlay.style.opacity = '0';
             setTimeout(() => {
                 staticOverlay.style.display = 'none';
+                
+                // START SOUNDS AFTER STATIC DISAPPEARS (4 seconds)
+                playInitialSounds();
+                
+                // Initialize dialog after static finishes
+                const firstDialog = dialog[0];
+                const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
+                textElement.innerHTML = initialText;
+                document.getElementById(firstDialog.spriteId).classList.add('active');
             }, 1000);
         }, 4000);
     }
@@ -265,16 +274,8 @@
     }
 
     window.addEventListener('load', function() {
+        // Only start the static - sounds will start AFTER static disappears
         startTVStatic();
-        
-        setTimeout(playInitialSounds, 500);
-        
-        setTimeout(() => {
-            const firstDialog = dialog[0];
-            const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
-            textElement.innerHTML = initialText;
-            document.getElementById(firstDialog.spriteId).classList.add('active');
-        }, 4500);
     });
 
     nextButton.addEventListener('click', nextDialog);
