@@ -98,6 +98,7 @@
     z-index: 10000;
     transition: opacity 1s ease-out;
     display: none;
+    
 }
         
 .fade-out {
