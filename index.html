@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Television_static.gif" id="static">
+
  <img id="tenna-fright" class="sprite" src="https://i.ibb.co/TB8p61tZ/spr-tenna-frightened-4.png">
     <img id="tenna-laugh" class="sprite" src="https://i.postimg.cc/yNb9nsc2/ezgif-72f5557666bf96.gif">
     <img id="tenna-woo" class="sprite" src="https://i.ibb.co/MkzqKV6m/spr-tenna-hooray-3.png">
@@ -152,12 +154,14 @@
         "We're still young,so there still so much to experience. And i'm happy that i'll get to experience it with you. Even if apart,i'll be glad to hear about what you accomplish. I'll be here all the way. So even when you'll be an old man,i'll be here cheering you on,joking and telling stories. Oh and of course cracking a beer open. In this whole world,there isn't a bro better than you. You're my bro for life. Thanks for sticking with me even tho i might be immature sometimes and...kinda stupid. I've grown a lot since i met you,and that's because you motivate me to grow. You're like my big brother. Actually i can just say you're my big brother. I don't want to dissapoint you.",
         "I'll always try my best,so at the end we can celebrate and have a beer. Or a burger. Or both! Truly there's such a bright future ahead of us. Glad i got to be here for one year and 4 months of your life bro. You've made me very proud in such a short amount of time. Cheer to this new age of new experiences! You were amazing at 18,sure as hell was at 19,and will be even cooler at 20. Keep being you bro. Keep shredding it everyday! Today,20 years ago,the coolest dude on this planet was born,and i'm so fucking glad he did. Because who else would i rather pester. You bro loves you lots!!! Have the best birthday ever,man. You deserve it. And you deserve everything that's good in this world. Happy birthday,Luke. Thanks for being."
     ];
+
  let currentLine = 0;
     let currentPage = 0;
     const textElement = document.getElementById('text');
     const nextButton = document.getElementById('next');
     const textThing = document.getElementById('textthing');
     const television = document.getElementById('television');
+    const staticOverlay = document.getElementById('static');
 
     const dialogSound = new Audio('dialog-sound.mp3');
     const backgroundMusic = new Audio('tenna-theme.mp3');
@@ -191,14 +195,20 @@
     }
 
     function playInitialSounds() {
-
         playDialogSound();
-        
-    
         startBackgroundMusic();
-        
-
         audioReady = true;
+    }
+
+    function startTVStatic() {
+        staticOverlay.style.display = 'block';
+        
+        setTimeout(() => {
+            staticOverlay.style.opacity = '0';
+            setTimeout(() => {
+                staticOverlay.style.display = 'none';
+            }, 1000);
+        }, 4000);
     }
 
     function nextDialog() {
@@ -254,14 +264,21 @@
         }
     }
 
-    window.addEventListener('load', playInitialSounds);
+    window.addEventListener('load', function() {
+        startTVStatic();
+        
+        setTimeout(playInitialSounds, 500);
+        
+        setTimeout(() => {
+            const firstDialog = dialog[0];
+            const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
+            textElement.innerHTML = initialText;
+            document.getElementById(firstDialog.spriteId).classList.add('active');
+        }, 4500);
+    });
 
-    const firstDialog = dialog[0];
-    const initialText = highlightWords(firstDialog.text, firstDialog.highlightWords);
-    textElement.innerHTML = initialText;
-    document.getElementById(firstDialog.spriteId).classList.add('active');
-    
     nextButton.addEventListener('click', nextDialog);
+
 </script>
 
 </body>
